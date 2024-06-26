@@ -87,7 +87,7 @@ function handlerClick () {
         value++;
         score.text = value;
 
-        mmm.scale.set(0.29);
+        mmm.scale.set(0.28);
 
         targetClick = false;
 
