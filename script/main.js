@@ -1,6 +1,8 @@
+let tg = window.Telegram.WebApp;
+
+tg.expand();
+
 let app = new PIXI.Application({
-  width: 390,
-  heigth: 390,
   antialias: true,
 });
 
