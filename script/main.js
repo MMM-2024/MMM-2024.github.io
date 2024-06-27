@@ -41,8 +41,10 @@ function setup() {
   gameScene.addChild( scoreBar );
 
   let bgScoreBar = new PIXI.Sprite( id["coin.png"] );
+  bgScoreBar.x = 300;
+  bgScoreBar.y = 190;
   bgScoreBar.scale.set(0.08);
-	scoreBar.addChild( bgScoreBar );
+	gameScene.addChild( bgScoreBar );
 
   let styler = new PIXI.TextStyle({
 		fontFamily: "Arial",
@@ -51,7 +53,7 @@ function setup() {
 	});
 
   score = new PIXI.Text( "0", styler );
-  score.x = -55;
+  score.x = -score.width / 2;
 	score.y = -score.height / 2 - 1;
 	scoreBar.addChild( score );
 
@@ -87,7 +89,10 @@ function handlerClick () {
         value++;
         score.text = value;
 
-        mmm.scale.set(0.28);
+        score.x = -score.width / 2;
+    		score.y = -score.height / 2;
+
+        mmm.scale.set(0.29);
 
         targetClick = false;
 
