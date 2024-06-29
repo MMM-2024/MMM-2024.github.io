@@ -1,8 +1,6 @@
-let tg = window.Telegram.WebApp;
-
-tg.expand();
-
 let app = new PIXI.Application({
+  width: 980,
+  height: 2000,
   antialias: true,
 });
 
@@ -21,17 +19,17 @@ function setup() {
   gameScene = new PIXI.Container();
   app.stage.addChild( gameScene );
 
-  fon = new PIXI.Sprite( id["razer-brend-zmei-znachok-logotip.jpg"] );
+  fon = new PIXI.Sprite( id["fon.jpg"] );
   fon.anchor.set(0, 0);
   gameScene.addChild( fon );
 
   let gameName = new PIXI.Container();
-  gameName.position.set( 110, 50 );
+  gameName.position.set( 225, 250 );
   gameScene.addChild( gameName );
 
   let style = new PIXI.TextStyle({
     fontFamily: "Arial",
-    fontSize: 36,
+    fontSize: 110,
     fill: "green",
   });
 
@@ -39,18 +37,18 @@ function setup() {
   gameName.addChild( message );
 
   let scoreBar = new PIXI.Container();
-  scoreBar.position.set( 250, 190 );
+  scoreBar.position.set( 600, 650 );
   gameScene.addChild( scoreBar );
 
   let bgScoreBar = new PIXI.Sprite( id["coin.png"] );
-  bgScoreBar.x = 300;
-  bgScoreBar.y = 190;
-  bgScoreBar.scale.set(0.08);
+  bgScoreBar.x = 760;
+  bgScoreBar.y = 650;
+  bgScoreBar.scale.set(0.26);
 	gameScene.addChild( bgScoreBar );
 
   let styler = new PIXI.TextStyle({
 		fontFamily: "Arial",
-		fontSize: 28,
+		fontSize: 100,
 		fill: "white",
 	});
 
@@ -61,7 +59,7 @@ function setup() {
 
   mmm = new PIXI.Sprite( id["Hardbas.png"] );
   mmm.x = gameScene.width / 2;
-	mmm.y = gameScene.height / 2;
+	mmm.y = 1400;
   mmm.interactive = true;
   mmm.buttonMode = true;
   mmm.on("pointerdown", handlerClick);
@@ -79,7 +77,7 @@ function play() {
     if ( timer == 0 ) {
         targetClick = true;
 
-        mmm.scale.set(0.3);
+        mmm.scale.set(1.05);
 
           } else if ( timer > 0 ) {
         timer--;
@@ -94,7 +92,7 @@ function handlerClick () {
         score.x = -score.width / 2;
     		score.y = -score.height / 2;
 
-        mmm.scale.set(0.29);
+        mmm.scale.set(1);
 
         targetClick = false;
 
